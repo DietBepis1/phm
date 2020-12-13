@@ -1,0 +1,54 @@
+/* Styles for the Testimonial component */
+@import 'quasar.variables'
+
+.testimonial
+  background: $bright
+  min-width: 200px
+  max-width: 600px
+  height: 225px
+  margin: 1rem 0 2rem
+  padding: .5rem
+  border-radius: 0 64px 0 64px
+
+.testimonial__img
+  width: 90px
+  height: 90px 
+
+.testimonial__title
+  color: $dark
+  font-size: 1rem
+  font-weight: 500
+
+.testimonial__content
+  color: $dark
+  font-size: .8rem
+  font-weight: 500
+  padding: 1rem .5rem
+
+.text-col
+  border: none
+  align-self: center
+
+@media (min-width: $sm)
+  .testimonial__img
+    width: 110px
+    height: 100px 
+
+  .testimonial__title
+    color: $dark
+    font-size: 1.25rem
+    font-weight: 500
+
+  .testimonial__content
+    color: $dark
+    font-size: 1rem
+    font-weight: 500
+    padding: 1rem .5rem
+
+@media (min-width: $lg)
+  .testimonial
+    padding: 1.2rem
+
+  .testimonial__img
+    width: 135px
+    height: 135px

@@ -1,0 +1,193 @@
+/*                  Styling for the Index.vue page               */
+/* Content is styled mobile first, with media queries at the end.*/
+/*        All sass here in this first section is up to 599px     */ 
+@import './quasar.variables'
+
+/*Settings for the scrolling images*/
+.landing-img1
+  background-image: url('../assets/images/livingroom.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  min-height: 100vh
+  min-width: 100vw
+
+.landing-img2
+  background-image: url('../assets/images/modernhouse.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  min-height: 35vh
+  min-width: 100vw
+
+.landing-img3
+  background-image: url('../assets/images/key.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  min-height: 35vh
+  width: 100vw
+
+/* Hero section content */
+.landing__content
+  background-color: rgba(29,29,29,0.8)
+  border-radius: 4rem
+  padding: 1.5rem 1.25rem 1.25rem
+  transform: translateY(-15%)
+
+.landing__title
+  color: $bright
+  font-weight: 400
+  font-size: 1.5rem
+  text-align: center
+
+.landing__subtitle
+  color: $bright
+  text-align: center
+  font-size: 1.25rem
+  font-weight: 300
+
+.landing__btn
+  padding: 1rem 0 1rem
+
+.landing__btn-purch
+  margin: 0 .35rem 0
+  padding: 0 .15rem 0
+  border-radius: 2rem
+
+.landing__btn-refi
+  margin: 0 .35rem 0
+  border-radius: 2rem
+
+
+/* Styling for landing sections that hold cards and testimonials */
+.section-dark
+  background: $dark
+  color: $bright
+  width: 100vw
+
+.section-dark__title
+  font-size: 1.5rem
+  font-weight: 400
+  text-align: center
+  margin: 1rem 0 1rem
+  padding: 0 1rem 0
+  border-radius: 2rem
+
+.section-dark__content
+  margin: 1rem 0 .5rem
+
+.section-dark__card-container
+  margin: 0 0 1rem
+
+// Testimonial component sections  
+.section-dark__test-title
+  font-size: 1.5rem
+  font-weight: 400
+  text-align: center
+  margin: 1rem 0 1rem
+  padding: 0 1rem 0
+  border-radius: 2rem
+
+.section-dark__test-subtitle
+  text-align: center
+  font-weight: 500
+
+
+/* Footer Section */
+.sharing-icons
+  margin: 0 .1rem 0
+
+.section-dark__footer-info
+  margin: 1rem 0 1rem
+
+.section-dark__footer-img
+  width: 85px
+  height: 95px
+  margin: .5rem 1rem .5rem
+
+
+/* Media Queries */ 
+/* Since the native styling is through 599px, these will all be for larger px intervals */
+/* See quasar.variables for sizes */
+@media (min-width: $sm)
+  .landing__title
+    font-size: 2.5rem
+  
+  .landing__subtitle
+    font-size: 1.35rem
+  
+  .landing__btn-purch
+    margin: 0 1rem 0 0
+  
+  .landing__btn-refi
+    margin: 0 0 0 1rem
+
+  //section-dark
+  .section-dark__title
+    font-size: 2.5rem
+  
+  .section-dark__test-title
+    font-size: 2.5rem
+  
+@media (min-width: $md)
+  .landing__title
+    font-size: 3rem
+  
+  .landing__subtitle
+    font-size: 1.5rem
+  
+  //section-dark
+  .section-dark__title
+    background: none
+    color: $bright
+    font-size: 3rem
+  
+  .section-dark__content
+    font-size: 1.15rem
+    padding: 0 1rem 0
+  
+  .section-dark__test-title
+    font-size: 3rem
+  
+  .sharing-icons
+    height: 50px
+    margin: 0 .5rem 0
+  
+@media (min-width: $lg)
+  .landing__title
+    font-size: 4rem
+  
+  .landing__subtitle
+    font-size: 1.75rem
+  
+  .landing__btn-purch
+    width: 150px
+    height: 48px
+    margin: 1rem 1rem .75rem
+    border-radius: 2rem
+
+  .landing__btn-refi
+    height: 48
+    width: 150px
+    margin: 1rem 1rem .75rem
+    border-radius: 2rem
+  
+  //section-dark
+  .section-dark__title
+    font-size: 4rem
+  
+  .section-dark__content
+    padding: 0 1.25rem 0
+  
+  .section-dark__card-container
+    margin: 0 0 1.65rem
+  
+  .section-dark__test-title
+    color: $bright
+    font-size: 4rem
+    padding: 0 1.5rem 0 0
+  
