@@ -1,12 +1,12 @@
 <template>
   <div class="flex justify-center appbtn">
     <div class="col">
-      <div class="row justify-center btn_div">
+      <div class="row justify-center appbtn_container">
         <q-btn
           round
           ripple
           class="appbtn__btn"
-          @click="incrementProgress"
+          @click="incrementProgress(data.text)"
         >
           <q-img
             :src="require(`../assets/svg/${data.icon}`)"
@@ -26,6 +26,13 @@ export default {
   name: 'AppBtn',
   props: {
     data: Object
+  },
+  methods: {
+    incrementProgress (btnValue) {
+      // Emits an event which sends the value of the button clicked and a call to
+      // increment progress bar.
+      this.$emit('incrementProgress', btnValue)
+    }
   }
 
 }

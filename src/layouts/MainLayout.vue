@@ -63,7 +63,7 @@ const linksData = [
     title: 'Home',
     caption: 'You\'ll always have a home here.',
     icon: 'house',
-    link: '/#'
+    link: '/#/'
   },
   {
     title: 'Apply',

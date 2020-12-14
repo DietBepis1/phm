@@ -1,15 +1,46 @@
-/*Sass styling for the LoanApp page*/
+/* Sass styling for the LoanApp page and application components. */
+/* These are all in one file because they share so many styles   */
 @import './quasar.variables'
 
-.app-ques
-  background: $bright
+.q-page
+  background:$bright
+
+.app-questionnaire
+  color: $dark
+  width: 100vw
+  margin: 0 0 2rem
 
 .apply__step
   margin: 1rem 0 0
 
-.app-ques__title
+.app-q__title
   font-size: 2rem
-  font-weight: 300
+  font-weight: 400
   padding: 1rem
   text-align: center
 
+.app-q__credit-container
+  margin: 0 0 2rem
+
+.app-q__credit-btn
+  border-radius: 2rem
+
+.app-q__content
+  font-size: 1rem
+  text-align: justify
+  margin: 0 0 1rem
+
+.app-q__progress-bar
+  font-size: 1rem
+
+/* Media Queries! */
+@media (min-width: $sm)
+  .app-q__title
+    font-size: 2.5rem
+
+@media (min-width: $md)
+  .app-q__title
+    font-size: 3rem
+  
+  .app-q__content
+    font-size: 1.25rem

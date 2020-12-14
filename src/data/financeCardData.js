@@ -3,7 +3,7 @@
 export const financeData = [
   {
     title: 'First-time Homebuyers',
-    content: 'Our robust first-time homebuyers program can help you with down payment assistance and more.',
+    content: 'Our robust first-time homebuyer programs can help you with down payment assistance and more.',
     imageUrl: 'husky.jpg'
   },
   {
