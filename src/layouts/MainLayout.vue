@@ -63,7 +63,7 @@ const linksData = [
     title: 'Home',
     caption: 'You\'ll always have a home here.',
     icon: 'house',
-    link: '/#/'
+    link: '/'
   },
   {
     title: 'Apply',
@@ -75,25 +75,25 @@ const linksData = [
     title: 'Log in',
     caption: 'Client portal.',
     icon: 'fas fa-user-friends',
-    link: '#'
+    link: ''
   },
   {
     title: 'Questions?',
     caption: 'Get help from our FAQs or client support.',
     icon: 'fas fa-question',
-    link: '#'
+    link: ''
   },
   {
     title: 'Love us?',
     caption: 'Let us know with a review.',
     icon: 'favorite',
-    link: '#'
+    link: ''
   },
   {
     title: 'Employees',
     caption: 'Log in here.',
     icon: 'fas fa-user-tie',
-    link: '#'
+    link: '#/test'
   }
 ]
 

@@ -7,11 +7,11 @@ export const step2 = [
   },
   {
     text: '0 - 3 Months',
-    icon: 'soon.svg'
+    icon: 'sometime.svg'
   },
   {
     text: '3 - 6 Months',
-    icon: 'sometime.svg'
+    icon: 'soon.svg'
   },
   {
     text: '6+ Months',
