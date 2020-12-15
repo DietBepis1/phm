@@ -1,16 +1,26 @@
 <template>
   <div>
-    <div class="app-q__title">
-      What is the timeframe for your Purchase?
-    </div>
-    <div class="row justify-center">
-      <AppBtn
-        v-for="(item, index) in step2"
-        :key="index"
-        :data="item"
-        @incrementProgress="incrementProgress($event)"
-      />
-    </div>
+    <transition
+      appear
+      enter-active-class="animated slideInDown"
+    >
+      <div class="app-q__title">
+        What is the timeframe for your Purchase?
+      </div>
+    </transition>
+    <transition
+      appear
+      appear-active-class="animated slideInUp"
+    >
+      <div class="row justify-center">
+        <AppBtn
+          v-for="(item, index) in step2"
+          :key="index"
+          :data="item"
+          @incrementProgress="incrementProgress($event)"
+        />
+      </div>
+    </transition>
   </div>
 </template>
 

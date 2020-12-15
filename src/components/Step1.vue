@@ -1,16 +1,26 @@
 <template>
   <div>
-    <div class="app-q__title">
-      What is your approximate gross annual income?
-    </div>
-    <div class="row justify-center">
-      <AppBtn
-        v-for="(item, index) in step1"
-        :key="index"
-        :data="item"
-        @incrementProgress="incrementProgress($event)"
-      />
-    </div>
+    <transition
+      appear
+      enter-active-class="animated slideInUp"
+    >
+      <div class="app-q__title">
+        What is your approximate gross annual income?
+      </div>
+    </transition>
+    <transition
+      appear
+      appear-active-class="animated slideInDown"
+    >
+      <div class="row justify-center">
+        <AppBtn
+          v-for="(item, index) in step1"
+          :key="index"
+          :data="item"
+          @incrementProgress="incrementProgress($event)"
+        />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -22,12 +32,14 @@ export default {
     AppBtn
   },
   props: {
-    step1: Array
+    step1: Array,
+    currentStep: Number
   },
   methods: {
     // Catches AppBtn press and propagates the event upward.
     incrementProgress (btnValue) {
       this.$emit('incrementProgress', btnValue)
+      this.active = !this.active
     }
   }
 

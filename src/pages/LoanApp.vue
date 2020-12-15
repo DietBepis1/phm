@@ -1,3 +1,4 @@
+ /* eslint-disable */
 <template>
   <q-page class="flex q-page">
     <!--div will conditionally render based on what step of preliminary
@@ -8,27 +9,32 @@
       <div
         v-if="currentStep == 0.0"
         class="col-xs-10 col-sm-9 col-md-12 app-q__container"
+        :duration="2000"
       >
         <Step0
           :step0="step0"
+          :currentStep="currentStep"
           @incrementProgress="incrementProgress($event)"
         />
       </div>
 
       <!-- Step 1 of the app questionnaire -->
+
       <div
-        v-else-if="currentStep == 0.25"
+        v-if="currentStep == 0.25"
         class="col-xs-10 col-sm-9 col-md-12 app-q__container"
       >
+
         <Step1
           :step1="step1"
           @incrementProgress="incrementProgress($event)"
         />
+
       </div>
 
       <!-- Step 2 of the app questionnaire -->
       <div
-        v-else-if="currentStep == 0.5"
+        v-if="currentStep == 0.5"
         class="col-xs-10 col-sm-9 col-md-12 app-q__container"
       >
         <Step2
@@ -39,7 +45,7 @@
 
       <!-- Step 3 of the app questionnaire -->
       <div
-        v-else-if="currentStep == 0.75"
+        v-if="currentStep == 0.75"
         class="col-xs-10 col-sm-6 col-md-4 app-q__container"
       >
         <Step3 @reconcileLoanAppData="reconcileLoanAppData($event)" />
@@ -116,12 +122,13 @@ export default {
         this.loanAppData.leadTime = userSelection
       }
 
+      // this.currentStep += 0.25
       // This is purely for style. I feel like it makes the prompts feel nicer.
       setTimeout(
         () => {
           this.currentStep += 0.25
         },
-        600
+        0
       )
     },
     reconcileLoanAppData (data) {
@@ -141,7 +148,7 @@ export default {
       // Simulate Processing
       setTimeout(
         () => this.$router.push('/completion'),
-        1000
+        500
       )
     }
   },

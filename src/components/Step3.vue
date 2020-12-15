@@ -1,86 +1,98 @@
 <template>
-  <div class="app-q__credit-container">
-    <div class="app-q__title">
-      Let's do a quick credit check.
-    </div>
-    <div class="app-q__content">
-      Don't worry! It is only a "soft-pull" and will not impact your credit
-      score. A credit check helps us connect you with the right mortgage
-      officer and loan options.
-    </div>
-    <div class="row justify-center">
-      <q-form
-        @submit="onSubmit"
-        @reset="onReset"
-        class="q-gutter-md"
-      >
-        <!-- q-input rules must evaluate to true to trigger error -->
-        <q-input
-          v-model="creditInfo.firstName"
-          type="text"
-          label="First Name"
-          hint="First name"
-          lazy-rules
-        />
-
-        <q-input
-          v-model="creditInfo.lastName"
-          type="text"
-          label="Last Name"
-          hint="Last Name"
-          lazy-rules
-        />
-
-        <q-input
-          v-model="creditInfo.phoneNum"
-          type="tel"
-          label="Phone Number"
-          hint="Enter your phone number.."
-          lazy-rules
-        />
-
-        <q-input
-          v-model="creditInfo.email"
-          type="email"
-          label="Email"
-          hint="Enter your email."
-          lazy-rules
-        />
-
-        <q-input
-          v-model="creditInfo.ssn"
-          :type="isHidden ? 'password' : 'text'"
-          label="Social Security Number"
-          lazy-rules
-        />
-
-        <q-toggle
-          v-model="accept"
-          @click="accept = !accept"
-          checked-icon="check"
-          unchecked-icon="clear"
-          label="I authorize PHMC to obtain my personal information for the purpose of issuing credit."
-        />
-
-        <div>
-          <q-btn
-            glossy
-            label="Submit"
-            type="submit"
-            color="primary"
-            class="app-q__credit-btn"
+  <transition-group
+    appear
+    enter-active-class="animated slideInLeft"
+  >
+    <div
+      key="text"
+      class="app-q__credit-container"
+    >
+      <div class="app-q__title">
+        Let's do a quick credit check.
+      </div>
+      <div class="app-q__content">
+        Don't worry! It is only a "soft-pull" and will not impact your credit
+        score. A credit check helps us connect you with the right mortgage
+        officer and loan options.
+      </div>
+      <div class="row justify-center">
+        <q-form
+          @submit="onSubmit"
+          @reset="onReset"
+          class="q-gutter-md"
+        >
+          <!-- q-input rules must evaluate to true to trigger error -->
+          <q-input
+            v-model="creditInfo.firstName"
+            type="text"
+            label="First Name"
+            hint="First name"
+            lazy-rules
+            :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
           />
-          <q-btn
-            label="Reset"
-            type="reset"
-            color="primary"
-            flat
-            class="q-ml-sm app-q__credit-btn"
+
+          <q-input
+            v-model="creditInfo.lastName"
+            type="text"
+            label="Last Name"
+            hint="Last Name"
+            lazy-rules
+            :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
           />
-        </div>
-      </q-form>
+
+          <q-input
+            v-model="creditInfo.phoneNum"
+            mask="(###) ### - ####"
+            label="Phone Number"
+            hint="Enter your phone number.."
+            lazy-rules
+          />
+
+          <q-input
+            v-model="creditInfo.email"
+            type="email"
+            label="Email"
+            hint="Enter your email."
+            lazy-rules
+            :rules="[val => isValidEmail(val) || 'Please enter a valid email address.']"
+          />
+
+          <q-input
+            v-model="creditInfo.ssn"
+            mask="###-##-####"
+            label="Social Security Number"
+            lazy-rules
+          />
+
+          <q-toggle
+            v-model="accept"
+            @click="accept = !accept"
+            checked-icon="check"
+            unchecked-icon="clear"
+            label="I authorize PHMC to obtain my personal information for the purpose of issuing credit."
+          />
+
+          <div>
+            <q-btn
+              glossy
+              :disabled="!accept"
+              label="Submit"
+              type="submit"
+              color="primary"
+              class="app-q__credit-btn"
+            />
+            <q-btn
+              label="Reset"
+              type="reset"
+              color="primary"
+              flat
+              class="q-ml-sm app-q__credit-btn"
+            />
+          </div>
+        </q-form>
+      </div>
     </div>
-  </div>
+  </transition-group>
 </template>
 
 <script>
@@ -96,7 +108,7 @@ export default {
         firstName: null,
         lastName: null,
         ssn: null,
-        creditScore: 0,
+        creditScore: null,
         phoneNum: null,
         email: null
       }
@@ -134,6 +146,10 @@ export default {
 
         return hash
       }
+    },
+    isValidEmail (val) {
+      const emailRegex = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/
+      return emailRegex.test(val)
     }
   }
 

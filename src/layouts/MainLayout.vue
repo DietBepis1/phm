@@ -16,10 +16,12 @@
         />
 
         <q-toolbar-title class="toolbar-title">
-          <q-img
-            src="../assets/images/logo-phmc.png"
-            class="brand-img"
-          />
+          <a href="/">
+            <q-img
+              src="../assets/images/logo-phmc.png"
+              class="brand-img"
+            />
+          </a>
         </q-toolbar-title>
 
         <div class="nav__phone">
@@ -50,7 +52,13 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <!-- Between page transition -->
+      <transition
+        appear
+        enter-active-class="animated slideInUp"
+      >
+        <router-view />
+      </transition>
     </q-page-container>
   </q-layout>
 </template>
@@ -129,4 +137,26 @@ export default {
 
 .nav__drawer
   background: $bright
+
+.view-enter-active, .view-leave-active
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease
+
+.view-enter-active
+  transition-delay: 0.5s
+
+.view-enter
+  opacity: 0
+  transform: translateY(50px)
+
+.view-enter-to
+  opacity: 1
+  transform: translateY(0px)
+
+.view-leave
+  opacity: 1
+  transform: translateY(0px)
+
+.view-leave-to
+  opacity: 0
+  transform: translateY(-50px)
 </style>

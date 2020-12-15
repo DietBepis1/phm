@@ -18,7 +18,7 @@ export const financeData = [
   },
   {
     title: 'Get Out of Town',
-    content: 'Escape the hustle and bustle of the city. USDA financing can cover 105% of a rural home\'s purchase price.',
+    content: 'Escape the hustle and bustle of the city. USDA financing can cover 102% of a rural home\'s purchase price.',
     imageUrl: 'farmhouse.jpg'
   }
 ]

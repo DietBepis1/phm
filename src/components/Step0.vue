@@ -3,6 +3,7 @@
     <div class="app-q__title">
       What type of purchase do you wish to make?
     </div>
+
     <div class="row justify-center">
       <AppBtn
         v-for="(item, index) in step0"
