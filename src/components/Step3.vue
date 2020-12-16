@@ -7,7 +7,7 @@
       key="text"
       class="app-q__credit-container"
     >
-      <div class="app-q__title">
+      <div class="app-q__title-credit-check">
         Let's do a quick credit check.
       </div>
       <div class="app-q__content">
