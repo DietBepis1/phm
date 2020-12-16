@@ -25,7 +25,6 @@ export default {
     async queryDb () {
       await axios.get('/api/loanappdata')
         .then(res => {
-          console.log('Directly from MongoDB:')
           console.log(res.data)
         })
         .catch(err => console.error(err))

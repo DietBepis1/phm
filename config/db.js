@@ -5,16 +5,17 @@ const config = require('config')
 const db = config.get('mongoURI')
 
 // Connection Settings
-connectionSettings = {
-  'useNewUrlParser': true,
-  'useUnifiedTopology': true
+const connectionSettings = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 }
 
 const connectDB = async () => {
   try {
     await mongoose.connect(db, connectionSettings)
     console.log('Yay! MongoDB has connected ᕙ(▀̿̿Ĺ̯̿̿▀̿ ̿) ᕗ')
-  } catch(err) {
+  }
+  catch (err) {
     console.error(err.message)
     process.exit(1)
   }

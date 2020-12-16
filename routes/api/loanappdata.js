@@ -27,8 +27,8 @@ router.post('/', (req, res) => {
   })
 
   newItem
-  .save()
-  .then(res.json({ "msg": "Application data has been store successfully" }))
+    .save()
+    .then(res.json({ msg: 'Application data has been store successfully' }))
 })
 
 module.exports = router

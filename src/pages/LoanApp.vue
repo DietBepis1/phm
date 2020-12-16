@@ -13,7 +13,7 @@
       >
         <Step0
           :step0="step0"
-          :currentStep="currentStep"
+          :current-step="currentStep"
           @incrementProgress="incrementProgress($event)"
         />
       </div>
@@ -24,12 +24,10 @@
         v-if="currentStep == 0.25"
         class="col-xs-10 col-sm-9 col-md-12 app-q__container"
       >
-
         <Step1
           :step1="step1"
           @incrementProgress="incrementProgress($event)"
         />
-
       </div>
 
       <!-- Step 2 of the app questionnaire -->
@@ -53,7 +51,6 @@
 
       <!--Progress bar-->
       <div class="absolute-bottom">
-
         <q-linear-progress
           size="5vh"
           :value="currentStep"

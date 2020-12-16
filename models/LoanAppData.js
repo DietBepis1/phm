@@ -1,7 +1,7 @@
 // A Model for the loanAppData object to be stored in MongoDB
 
-const mongoose = require('mongoose');
-require('mongoose-type-url');
+const mongoose = require('mongoose')
+require('mongoose-type-url')
 
 // Define schema for loanAppData object
 const Schema = mongoose.Schema

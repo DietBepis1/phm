@@ -14,7 +14,7 @@
           <q-btn
             glossy
             color="accent"
-            to='/apply'
+            to="/apply"
             class="landing__btn-purch"
           >
             Purchase

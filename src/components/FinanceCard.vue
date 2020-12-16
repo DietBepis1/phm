@@ -1,6 +1,6 @@
 <template>
   <q-card class="card">
-    <img
+    <q-img
       :src="require(`../assets/images/${data.imageUrl}`)"
       class="card__img"
     />

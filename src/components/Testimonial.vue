@@ -8,8 +8,12 @@
         />
       </div>
       <div class="col-8 text-col">
-        <div class="testimonial__title">{{ data.title }}</div>
-        <div class="testimonial__content">{{ data.text }}</div>
+        <div class="testimonial__title">
+          {{ data.title }}
+        </div>
+        <div class="testimonial__content">
+          {{ data.text }}
+        </div>
       </div>
     </div>
   </div>

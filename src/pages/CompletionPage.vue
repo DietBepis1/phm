@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex q-page">
-    <div class='row flex-center completion-page'>
+    <div class="row flex-center completion-page">
       <div class="col-xs-10 col-sm-9 col-lg-6 completion__content">
         <div class="completion__title">
           You did it!
