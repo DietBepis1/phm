@@ -15,7 +15,7 @@
         score. A credit check helps us connect you with the right mortgage
         officer and loan options.
       </div>
-      <div class="row justify-center">
+      <div class="row justify-center app-q__credit-form">
         <q-form
           @submit="onSubmit"
           @reset="onReset"
@@ -28,6 +28,7 @@
             label="First Name"
             hint="First name"
             lazy-rules
+            dense="true"
             :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
           />
 
@@ -37,6 +38,7 @@
             label="Last Name"
             hint="Last Name"
             lazy-rules
+            dense="true"
             :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
           />
 
@@ -45,6 +47,7 @@
             mask="(###) ### - ####"
             label="Phone Number"
             hint="Enter your phone number.."
+            dense="true"
             lazy-rules
           />
 
@@ -54,6 +57,7 @@
             label="Email"
             hint="Enter your email."
             lazy-rules
+            dense="true"
             :rules="[val => isValidEmail(val) || 'Please enter a valid email address.']"
           />
 
@@ -61,6 +65,7 @@
             v-model="creditInfo.ssn"
             mask="###-##-####"
             label="Social Security Number"
+            dense="true"
             lazy-rules
           />
 
