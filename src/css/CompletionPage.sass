@@ -1,0 +1,66 @@
+/* Styling for CompletionPage.vue */
+@import './quasar.variables'
+
+.completion-page
+  background: url('../assets/images/row-of-houses.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  width: 100vw
+
+.completion__content
+  background-color: rgba(29,29,29,0.9)
+  border-radius: 4rem
+  padding: 1.5rem 1.55rem .35rem
+
+.completion__title
+  color: $bright
+  font-weight: 400
+  font-size: 2rem
+  text-align: center
+
+.completion__helper-txt
+  color: $bright
+  text-align: justify
+  font-size: 1rem
+  font-weight: 300
+
+.completion__btn
+  padding: 1rem 0 1rem
+
+.completion__btn-sign-in
+  width: 170px
+  margin: 0.5rem
+  border-radius: 2rem
+
+.completion__btn-help
+  width: 170px
+  margin: 0.5rem
+  border-radius: 2rem
+
+
+/* Media queries */
+@media (min-width: $sm)
+  .completion__title
+    font-size: 2.5rem
+  
+  .completion__helper-txt
+    font-size: 1.35rem
+
+@media (min-width: $md)
+  .completion__title
+    font-size: 3rem
+
+  .completion__helper-txt
+    font-size: 1.5rem
+  
+  .completion__btn-sign-in
+    margin: 1rem
+
+.completion__btn-help
+  width: 170px
+  margin: 1rem
+
+@media (min-width: $lg)
+  .completion__title
+    font-size: 4rem

@@ -1,36 +1,47 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf">
+    <q-header
+      elevated
+      class="header"
+    >
       <q-toolbar>
         <q-btn
           flat
           dense
           round
+          color="bright"
           icon="menu"
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title>
-          Quasar App
+        <q-toolbar-title class="toolbar-title">
+          <a href="/">
+            <q-img
+              src="../assets/images/logo-phmc.png"
+              class="brand-img"
+            />
+          </a>
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div class="nav__phone">
+          1-800-9LENDER
+        </div>
       </q-toolbar>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
       content-class="bg-grey-1"
+      class="nav__drawer"
     >
       <q-list>
         <q-item-label
           header
-          class="text-grey-8"
+          class="nav__label"
         >
-          Essential Links
+          Navigation
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -41,7 +52,13 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <!-- Between page transition -->
+      <transition
+        appear
+        enter-active-class="animated slideInUp"
+      >
+        <router-view />
+      </transition>
     </q-page-container>
   </q-layout>
 </template>
@@ -51,46 +68,40 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Home',
+    caption: 'You\'ll always have a home here.',
+    icon: 'house',
+    link: '/'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: 'Apply',
+    caption: 'Explore financing.',
+    icon: 'fas fa-pen-fancy',
+    link: '/#/apply'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: 'Log in',
+    caption: 'Client portal.',
+    icon: 'fas fa-user-friends',
+    link: ''
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: 'Questions?',
+    caption: 'Get help from our FAQs or client support.',
+    icon: 'fas fa-question',
+    link: ''
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
+    title: 'Love us?',
+    caption: 'Let us know with a review.',
     icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    link: ''
+  },
+  {
+    title: 'Employees',
+    caption: 'Log in here.',
+    icon: 'fas fa-user-tie',
+    link: '#/test'
   }
 ]
 
@@ -105,3 +116,7 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+@import '../css/MainLayout'
+</style>

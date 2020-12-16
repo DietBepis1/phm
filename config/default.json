@@ -1,0 +1,3 @@
+{
+  "mongoURI":"mongodb+srv://Glenn:demo123@phm-demo.nojed.mongodb.net/phm-demo?retryWrites=true&w=majority"
+}
