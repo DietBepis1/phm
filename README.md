@@ -28,6 +28,10 @@ See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
 
 ### Photo Credits
+```bash
+pictures compressed at compressor.io
+```
+
 Living Room: Albert Castillo via unsplash.com,
 House and Key: Tierra Mallorca via unsplash.com,
 Townhouses: Terrah Holly via unsplash.com,

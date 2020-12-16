@@ -118,45 +118,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.header
-  background: $dark
-  opacity: 1
-
-.toolbar-title
-  color: $bright
-
-.brand-img
-  background-size: contain
-  max-width: 200px
-
-.nav__phone
-  font-size: 1.05rem
-
-.nav__label
-  color: $accent
-
-.nav__drawer
-  background: $bright
-
-.view-enter-active, .view-leave-active
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease
-
-.view-enter-active
-  transition-delay: 0.5s
-
-.view-enter
-  opacity: 0
-  transform: translateY(50px)
-
-.view-enter-to
-  opacity: 1
-  transform: translateY(0px)
-
-.view-leave
-  opacity: 1
-  transform: translateY(0px)
-
-.view-leave-to
-  opacity: 0
-  transform: translateY(-50px)
+@import '../css/MainLayout'
 </style>

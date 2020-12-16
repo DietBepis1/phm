@@ -38,10 +38,10 @@
         <div class="row justify-center section-dark__content">
           <p>
             Platinum Home Mortgage is at the forefront of lending; whether you
-            wish to purchase a home, multi-family building, condominium or
+            wish to purchase a home, multi-family building, condominium, or
             townhome, we have you covered. We offer a vast array of financing options,
             including down payment assistance, renovation and construction loans, jumbo
-            loans, refinancing, and many others. Further, because Platinum Home Mortgage is a direct
+            loans, refinancing, and much more. Further, because Platinum Home Mortgage is a direct
             lender, we can tailor a loan to fit your exact needs.
           </p>
         </div>

@@ -105,8 +105,8 @@ export default {
       accept: false,
       isHidden: true,
       creditInfo: {
-        firstName: null,
-        lastName: null,
+        firstName: '',
+        lastName: '',
         ssn: null,
         creditScore: null,
         phoneNum: null,

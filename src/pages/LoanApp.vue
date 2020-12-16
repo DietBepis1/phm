@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Step0 from '../components/Step0'
 import Step1 from '../components/Step1'
 import Step2 from '../components/Step2'
@@ -140,15 +141,20 @@ export default {
       this.loanAppData.phoneNum = data.phoneNum
       this.loanAppData.email = data.email
 
+      axios
+        .post('/api/loanappdata', this.loanAppData)
+        .then(res => console.log('Okay!'))
+        .catch(err => console.error(err))
+
       this.currentStep += 0.25
 
       // Log the loanAppData object for view
-      console.log(this.loanAppData)
+      // console.log(this.loanAppData)
 
       // Simulate Processing
       setTimeout(
         () => this.$router.push('/completion'),
-        500
+        250
       )
     }
   },
