@@ -37,7 +37,12 @@
 export default {
   name: 'FinanceCard',
   props: {
-    data: Object
+    data: {
+      type: Object,
+      default: function () {
+        return { msg: 'Missing Prop' }
+      }
+    }
   }
 }
 </script>

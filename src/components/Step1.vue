@@ -32,8 +32,12 @@ export default {
     AppBtn
   },
   props: {
-    step1: Array,
-    currentStep: Number
+    step1: {
+      type: Array,
+      default: function () {
+        return { msg: 'Missing Prop' }
+      }
+    }
   },
   methods: {
     // Catches AppBtn press and propagates the event upward.

@@ -23,7 +23,12 @@
 export default {
   name: 'Testimonial',
   props: {
-    data: Object
+    data: {
+      type: Object,
+      default: function () {
+        return { msg: 'Missing prop' }
+      }
+    }
   }
 
 }

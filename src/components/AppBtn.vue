@@ -25,7 +25,12 @@
 export default {
   name: 'AppBtn',
   props: {
-    data: Object
+    data: {
+      type: Object,
+      default: function () {
+        return { msg: 'Missing prop' }
+      }
+    }
   },
   methods: {
     incrementProgress (btnValue) {
