@@ -44,7 +44,7 @@
       <!-- Step 3 of the app questionnaire -->
       <div
         v-if="currentStep == 0.75"
-        class="col-xs-10 col-sm-6 col-md-4 app-q__container"
+        class="col-xs-10 col-sm-6 col-md-4 col-lg-3 app-q__container"
       >
         <Step3 @reconcileLoanAppData="reconcileLoanAppData($event)" />
       </div>
@@ -138,9 +138,10 @@ export default {
       this.loanAppData.phoneNum = data.phoneNum
       this.loanAppData.email = data.email
 
+      // Send a post request to the database
       axios
         .post('/api/loanappdata', this.loanAppData)
-        .then(res => console.log('Okay!'))
+        .then()
         .catch(err => console.error(err))
 
       this.currentStep += 0.25
