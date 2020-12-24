@@ -15,13 +15,13 @@ app.use('/api/loanappdata', loanappdata)
 
 // Serving static assets in production
 // Not sure of the path for this yet so it may need to be changed :)
-app.use(express.static('dist'))
+app.use(express.static('dist/spa'))
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist', 'spa', 'index.html'))
 })
 
 // Listen on a port
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, () => {
   const port = server.address().port
 

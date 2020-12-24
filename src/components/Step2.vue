@@ -5,7 +5,7 @@
       enter-active-class="animated slideInDown"
     >
       <div class="app-q__title">
-        What is the timeframe for your Purchase?
+        What is the timeframe for your purchase?
       </div>
     </transition>
     <transition

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 <template>
   <transition-group
     appear
@@ -27,6 +29,7 @@
             type="text"
             label="First Name"
             hint="First name"
+            dense="true"
             lazy-rules
             :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
           />
@@ -36,6 +39,7 @@
             type="text"
             label="Last Name"
             hint="Last Name"
+            dense="true"
             lazy-rules
             :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
           />
@@ -45,6 +49,7 @@
             mask="(###) ### - ####"
             label="Phone Number"
             hint="Enter your phone number.."
+            dense="true"
             lazy-rules
           />
 
@@ -54,6 +59,7 @@
             label="Email"
             hint="Enter your email."
             lazy-rules
+            dense="true"
             :rules="[val => isValidEmail(val) || 'Please enter a valid email address.']"
           />
 
@@ -61,6 +67,7 @@
             v-model="creditInfo.ssn"
             mask="###-##-####"
             label="Social Security Number"
+            dense="true"
             lazy-rules
           />
 
@@ -159,3 +166,5 @@ export default {
 <style lang="sass" scoped>
 @import "../css/LoanApp"
 </style>
+
+/* eslint-enable */
