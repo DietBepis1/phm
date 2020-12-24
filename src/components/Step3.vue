@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 <template>
   <transition-group
     appear
@@ -27,6 +29,7 @@
             type="text"
             label="First Name"
             hint="First name"
+            dense="true"
             lazy-rules
             dense="true"
             :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
@@ -37,6 +40,7 @@
             type="text"
             label="Last Name"
             hint="Last Name"
+            dense="true"
             lazy-rules
             dense="true"
             :rules="[val => val.length >= 2 || 'Please enter a valid name.']"
@@ -164,3 +168,5 @@ export default {
 <style lang="sass" scoped>
 @import "../css/LoanApp"
 </style>
+
+/* eslint-enable */
