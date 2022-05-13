@@ -9,7 +9,9 @@
     "server": "nodemon server",
     "serve-dev": "concurrently \"yarn server\" \"quasar dev\"",
     "lint": "eslint --ext .js,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "postinstall": "yarn quasar build",
+    "serve": "node server.js"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
